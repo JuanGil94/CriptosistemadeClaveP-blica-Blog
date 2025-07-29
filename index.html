@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criptosistema</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Criptosistema de Clave Pública, su concepto, ventajas y algo más...</h1>
+    <nav>
+      <ul>
+        <li><a href="#entrada0">Introducción</a></li>
+        <li><a href="#entrada1">¿Qué es?</a></li>
+        <li><a href="#entrada2">¿Cómo funciona?</a></li>
+        <li><a href="#entrada3">Ventajas y Comparación</a></li>
+        <li><a href="#entrada4">Caso Práctico</a></li>
+        <li><a href="#entrada5">Observaciones</a></li>
+        <li><a href="#entrada6">Webgrafías</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="entrada0" class="contenedor0">
+    <div class="texto0">
+      <h2>Introducción:</h2>
+      <p>Cuando hablamos del desarrollo de software, la seguridad es un tema muy importante a tener en cuenta. Cuando estamos desarrollando, debemos velar por la seguirdad de la información sensible que estamos manejando, pero como lo realizamos?.<br>
+        Conozacamos un poco sobre Criptosistemas y sus componentes importantes:</p><br>
+      </div>
+        <div class="texto">
+      <h2>¿Que es un Criptosistema?</h2>
+      <p>   
+        Es un sistema para transformar datos legibles (texto plano) en datos no legibles (texto cifrado). Este proceso se realiza por medio de algoritmos matemáticos y técnicas diseñadas para proteger la información donde solo personas autorizadas puden entenderlos por medio de un clave<br>
+        Se muesta el concepto en un diagrama de flujo UML y en seguida nos basaremos en hablar del <strong>Criptosistema de Clave Pública</strong>.</p>.
+      </p>
+    </div>
+    <img class="img-1" src="img/Diagrama_UML.png" alt="Diagrama relizado en UMLPlant" width="300" height="200">
+    </section>
+    <section id="entrada1">
+      <h2>1. ¿Qué es el Criptosistema de Clave Pública?</h2>
+      <p>Es un método de cifrado que utiliza dos claves distintas: una pública (para cifrar) y una privada (para descifrar). A diferencia del sistema simétrico, la clave privada nunca se comparte, garantizando así mayor seguridad en las comunicaciones.</p>
+    </section>
+
+    <section id="entrada2">
+      <h2>2. ¿Cómo funciona y cuáles son sus algoritmos representativos?</h2>
+      <p>Funciona mediante una pareja de claves. Ejemplos de algoritmos conocidos son RSA, ElGamal, y ECC (Elliptic Curve Cryptography). Se usa ampliamente en protocolos como HTTPS, firmas digitales y autenticación. Esto explica mediante una diagrama de flujo realizado en PlantUML: <br>
+    </p>
+        <img src="img/Diagrama_UML_Programa.png" alt="Diagrama relizado en UMLPlant" width="500" height="400">
+    </section>
+
+    <section id="entrada3">
+      <h2>3. Ventajas, Desventajas y Comparación:</h2>
+      <ul>
+        <strong>Ventajas:</strong> 
+        <li>No es necesario compartir la clave privada, lo que reduce el riesgo. Solo la clave pública se comparte.</li>
+        <li>Permite autenticar y verificar la identidad del emisor.</li>
+        <li>En sistemas grandes, se gestiona mejor que el sistema simétrico al manejar mayor flujo de datos.</li>
+        <li>Se puede garantizar quién envió el mensaje y que nadie lo ha leído.</li>
+        <br>
+      </ul>
+      <ul>
+        <strong>Desventajas:</strong> 
+        <li>Más lento que el sistema simétrico debido a operaciones matemáticas complejas.</li>
+        <li>Requiere más procesamiento y potencia computacional.</li>
+        <li>Claves cortas (menores a 2048 bits) pueden ser vulnerables.</li>
+        <br>     
+      </ul>
+      <ul>
+        <strong>Diferencias:</strong> 
+        <li>Este sistema maneja dos claves, mienstras que un sistema simétrico solo una clave compartida.</li>
+        <li>No requiere compartir la clave privada, mientras que el sistema simétrico si de una forma segura.</li>
+        <li>Es mas escalable al tener la opción que cada usuario tenga su par de claves, mientras que el sistema simétrico debe tener un sistema de gestion de claves compartidas.</li>
+        <li>Se puede garantizar quién envió el mensaje y que nadie lo ha leído.</li> 
+        <br> 
+      </ul>
+    </section>
+
+    <section id="entrada4">
+      <h2>4. Caso práctico: Cifrado RSA simple en JavaScript:</h2>
+      <p>Ingrese un mensaje y verá cómo se cifra y descifra usando un algoritmo básico de RSA <strong>(este ejemplo es realizado con fines educativos para su completo entendimiento).</strong></p>
+      <input type="text" id="mensaje" placeholder="Escriba un mensaje">
+      <button onclick="cifrarMensaje()">Cifrar</button>
+      <button onclick="descifrarMensaje()">Descifrar</button>
+      <p><strong>Mensaje Cifrado:</strong> <span id="cifrado"></span></p>
+      <p><strong>Mensaje Descifrado:</strong> <span id="descifrado"></span></p>
+    </section>
+
+    <section id="entrada5">
+      <h2>5. Observaciones y Recomendaciones:</h2>
+      <ul>
+        <li>Usar bibliotecas seguras y probadas como OpenSSL o Crypto en Node.js.</li>
+        <li>Proteger siempre la clave privada.</li>
+        <li>Combinar criptografía simétrica y asimétrica para optimizar velocidad y seguridad (e.g., cifrado híbrido).</li>
+      </ul>
+    </section>
+          <section id="entrada6">
+      <h2>Webgrafías</h2>
+      <ul>
+    <li>Hernández, L. (2016). Criptografía de clave asimétrica. En <em>La criptografía</em> (pp. 93–134). Editorial CSIC Consejo Superior de Investigaciones Científicas.</li>
+    <li>Maillo, J. (2017). Seguridad de la información. En <em>Sistemas seguros de acceso y transmisión de datos</em> (pp. 76–102). RA-MA Editorial.</li>
+    <li><a href="https://www.ibm.com/docs/es/integration-bus/10.0.0?topic=overview-public-key-cryptography" target="_blank">IBM. (s.f.). Criptografía de clave pública - IBM Documentation.</a></li>
+    <li><a href="https://editor.plantuml.com/" target="_blank">PlantUML. (s.f.). Online PlantUML Editor.</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 - Blog sobre Seguridad en el Desarrollo de Software.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
